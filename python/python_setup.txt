@@ -1,0 +1,56 @@
+
+关于 windows 装python, 和ccxt, pandas 的简单方法:
+
+1.下载py36 链接：https://www.python.org/downloads/windows/
+我选的是 Python 3.6.7rc1 Download Windows x86-64 executable installer
+2.安装的时候关联环境变量 path (如果需要安装多个python版本,其他版本安装的时候不关联路径)
+3.windows 注销一次
+
+然后在开始菜单里面进入运行 cmd.exe 进入命令行模式
+
+(最好在翻墙模式下运行)
+
+运行 pip install ccxt  
+
+然后会出现一个红体字的错误
+
+Command "d:\vpy361\scripts\python.exe -u -c "import setuptools, tokenize;__file__='C:\\Users\\sh18\\AppData\\Local\\Temp
+\\pip-build-v7asht91\\lru-dict\\setup.py';f=getattr(tokenize, 'open', open)(__file__);code=f.read().replace('\r\n', '\n');f.close();exec(compile(code, __file__, 'exec'))" install --record C:\Users\AppData\Local\
+Temp\pip-bwf2gmjn-record\install-record.txt --single-version-externally-managed --compile --install-headers d:\vpy361\include\site\python3.6\lru-dict" failed with error code 1 in
+C:\Users\\AppData\Local\Temp\pip-build-v7asht91\lru-dict\
+
+这里注意最后 lru-dict 关键字.
+
+
+4.访问 链接：https://www.lfd.uci.edu/~gohlke/pythonlibs/
+
+下载  (我选的是py36版本,因为我安装的是python36 如果你是py37或其他请自己对号入座)
+
+cytoolz-0.9.0.1-cp36-cp36m-win_amd64.whl 
+lru_dict-1.1.6-cp36-cp36m-win_amd64.whl
+Twisted-18.7.0-cp36-cp36m-win_amd64.whl
+
+用pip安装,注意whl的路径,我这里已经切换到wml的目录下面才运行的pip命令,你也可以指定目录,比如 
+pip install d:\download\cytoolz-0.9.0.1-cp36-cp36m-win_amd64.whl 
+
+pip install cytoolz-0.9.0.1-cp36-cp36m-win_amd64.whl 
+pip install lru_dict-1.1.6-cp36-cp36m-win_amd64.whl
+pip install Twisted-18.7.0-cp36-cp36m-win_amd64.whl
+
+(用pip安装,注意whl的路径,我这里已经切换到wml的目录下面才运行的pip命令,你也可以指定目录,比如 
+pip install d:\download\cytoolz-0.9.0.1-cp36-cp36m-win_amd64.whl )
+
+以后删除是用 pip uninstall xxx.whl
+
+然后 
+pip install ccxt
+
+pip install pandas
+
+如果出现提示出错,找到类似 lru-dict的文件去 https://www.lfd.uci.edu/~gohlke/pythonlibs/下载,或者 pip install 错误里面提到的关键字
+
+
+
+
+
+
